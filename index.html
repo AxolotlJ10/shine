@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Proxy</title>
+
+    <style>
+        body {
+            background: #111;
+            color: white;
+            font-family: Arial;
+            text-align: center;
+            padding-top: 100px;
+        }
+
+        input {
+            width: 400px;
+            max-width: 80%;
+            padding: 15px;
+            border-radius: 10px;
+            border: 0;
+        }
+
+        button {
+            padding: 15px 20px;
+            border: 0;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>My Proxy</h1>
+
+    <input id="url" placeholder="Enter a website">
+
+    <button onclick="go()">GO</button>
+
+    <script>
+        function go() {
+            let url = document.getElementById("url").value;
+
+            if (!url.startsWith("http://") &&
+                !url.startsWith("https://")) {
+                url = "https://" + url;
+            }
+
+            window.location.href = url;
+        }
+    </script>
+
+</body>
+</html>
